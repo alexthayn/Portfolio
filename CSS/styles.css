@@ -1,0 +1,96 @@
+/*Color Scheme
+Dark Blue = 0A4FA5
+Light Blue = 2ECFF3
+Light Yellow = EBF05B
+Yellow = EFD858
+RedOrange = D83727
+*/
+body{ margin: 0;}
+
+/* Header Styling */
+header {
+    height: 100px;
+    position: fixed;
+    top: 0;
+    transition: top 0.2s ease-in-out;
+    width: 100%;
+	font-size:18px;
+	line-height:14px;
+	text-transform:uppercase;
+	font-weight:500;
+	letter-spacing:3px;
+	z-index:99999;
+	background: -webkit-linear-gradient(#EBF05B, #EFD858); 
+  	background: -o-linear-gradient(#EBF05B, #EFD858); 
+  	background: -moz-linear-gradient(#EBF05B, #EFD858);
+  	background: linear-gradient(#EBF05B, #EFD858);
+    font-family: monospace;
+}
+
+/* Navbar Styling */
+.nav-up {
+    top: -100px;
+}	
+
+.navbar1 a:link {color: #FFFFFF; text-decoration:none;}
+.navbar1 a:visited {color: #FFFFFF; text-decoration:none;}
+.navbar1 a:hover {color: #0A4FA5; text-decoration:none; font-weight:500; background-color:#ffffff; padding:2px 3px 2px 5px; -moz-border-radius: 3px; border-radius: 3px;}
+.navbar1 a:pressed {color: #0A4FA5; text-decoration:none; font-weight:500; background-color:#ffffff; padding:2px 3px 2px 5px; -moz-border-radius: 3px; border-radius: 3px;}
+.navbar1 a:active {color: #FFFFFF; text-decoration:none;}
+
+.btnPressed a:link {color: #2ECFF3; text-decoration:none; font-weight:500; background-color:#ffffff; padding:2px 3px 2px 5px; -moz-border-radius: 3px; border-radius: 3px;}
+.btnPressed a:visited {color: #2ECFF3; text-decoration:none; font-weight:500; background-color:#ffffff; padding:2px 3px 2px 5px; -moz-border-radius: 3px; border-radius: 3px;}
+.btnPressed a:hover {color: #2ECFF3; text-decoration:none; font-weight:500; background-color:#ffffff; padding:2px 3px 2px 5px; -moz-border-radius: 3px; border-radius: 3px;}
+.btnPressed a:pressed {color: #2ECFF3; text-decoration:none; font-weight:500; background-color:#ffffff; padding:2px 3px 2px 5px; -moz-border-radius: 3px; border-radius: 3px;}
+.btnPressed a:active {color: #2ECFF3; text-decoration:none; font-weight:500; background-color:#ffffff; padding:2px 3px 2px 5px; -moz-border-radius: 3px; border-radius: 3px;}
+
+.navWrapper {
+	padding:0px 15px 0px 15px;
+}
+
+#top-menu li {
+    float: left;
+    list-style-type: none;
+}
+
+#top-menu a {
+    display: block;
+    margin: 25px 14px 0px 14px;
+    text-align: center;
+    -webkit-transition: .5s all ease-out;
+    -moz-transition: .5s all ease-out;
+    transition: .5s all ease-out;
+    color: #ffffff;
+    text-decoration: none;
+	padding:2px 3px 2px 5px;
+	-moz-border-radius: 3px; 
+	border-radius: 3px;
+}
+
+#top-menu a:hover {
+	color: #0A4FA5; text-decoration:none; font-weight:500; background-color:#ffffff; padding:2px 3px 2px 5px; -moz-border-radius: 3px; border-radius: 3px;
+}
+
+#top-menu li.active a {
+    color: #0A4FA5; text-decoration:none; font-weight:500; background-color:#ffffff; padding:2px 3px 2px 5px; -moz-border-radius: 3px; border-radius: 3px;
+}
+
+
+/* Intro Styling */
+#intro{
+    width: auto;
+    height: 1000px;
+    background: url("../Images/graffiti.jpg") no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#name, #se{
+    margin-left: 1em;
+    font-size: 10em;
+    font-family: monospace;
+    font-weight: 900;
+    color: #D83727;
+}

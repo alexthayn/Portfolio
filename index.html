@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- hides the nav bar as user scrolls -->
+<script>
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 2;
+    
+//Get height of navbar    
+var navbarHeight = 100;
+    //$('header').outerHeight();
+
+//if user scrolls set didScroll to true
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+//If user scrolled move navbar accordingly
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script> 
+
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Alex Thayn</title>
+        <meta name="description" content="Alex Thayn's Porfolio.">
+        <link rel="stylesheet" href="CSS/styles.css">
+    </head>
+    <body>
+        <header class="nav-down">
+            <div class="navWrapper">
+                <div class="navbar1">
+                    <ul id="top-menu">
+                        <li class="active">
+                            <a href="">HOME</a>
+                        </li>
+                        <li>
+                            <a href="about.html">ABOUT</a>
+                        </li>
+                        <li>
+                            <a href="project.html">PROJECTS</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    </body>
+    
+    <div id="intro">
+        <h1 id="name">ALEX THAYN</h1>
+        <h3 id="se">SOFTWARE ENGINEER</h3>
+    </div>
+</html>
