@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<?php
+    $host = "localhost";
+    $userName = "alexthay_alex;
+    $password = "password";
+    $dbName = "alexthayn_alexthay_1";
+ 
+    // Create database connection
+    $conn = new mysqli($host, $userName, $password, $dbName);
+
+    // Check connection
+    if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+    $fname = .$POST['last_name'];
+    $lname = .$POST['first_name'];
+    $email = .$POST['email'];
+    $message = .$POST['message'];
+    
+    $insertQuery = $mysqli_prepare("INSERT INTO emails(LastName, FirstName, Email, Message) VALUES (?, ?, ?, ?)");
+    $insertQuery->bind_param("ssss", $lname, $fname, $email, $message);
+    $insertQuery->execute();
+    $insertQuery->close();
+}?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- hides the nav bar as user scrolls -->
+<script>
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 2;
+    
+//Get height of navbar    
+var navbarHeight = 100;
+    //$('header').outerHeight();
+
+//if user scrolls set didScroll to true
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+//If user scrolled move navbar accordingly
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script> 
+
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Alex Thayn</title>
+    <meta name="description" content="Alex Thayn's Porfolio.">
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body id="contact">
+    <header class="nav-down">
+        <div class="navWrapper">
+            <div class="navbar1">
+                <ul id="top-menu">
+                    <li>
+                        <a href="index.html">HOME</a>
+                    </li>
+                    <li>
+                        <a href="about.html">ABOUT</a>
+                    </li>
+                    <li>
+                        <a href="project.html">PROJECTS</a>
+                    </li>
+                    <li class="active">
+                        <a href="contact.html">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="contactform">
+       
+        <form name="contactForm" method="post" action="">
+            <table width ="450px">
+                <tr>
+                    <td valign="top">
+                        <label for="first_name">First Name</label>
+                    </td>
+                    <td valign="top">
+                        <input  type="text" name="first_name" maxlength="50" style="width:300px">
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <label for="last_name">Last Name</label>
+                    </td>
+                    <td valign="top">
+                        <input  type="text" name="last_name" maxlength="50" style="width:300px">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Your Email</label>
+                    </td>
+                    <td>
+                        <input type="email" name="email" style="width:300px">
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <label for="message" >Message</label>
+                    </td>
+                    <td>
+                        <textarea id="message" name="message" placeholder="Write your message here..." spellcheck="true" style="height: 200px; width: 298px; resize:none"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td style="text-align: center" >
+                        <input id="formbutton" type="submit" value="Send Message">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    
+    <div id="stick"></div>
+    
+</body>
+
+    
+</html>
