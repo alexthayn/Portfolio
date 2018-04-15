@@ -1,30 +1,8 @@
 <!DOCTYPE html>
 
-<?php
-    $host = "localhost";
-    $userName = "alexthay_alex;
-    $password = "password";
-    $dbName = "alexthayn_alexthay_1";
- 
-    // Create database connection
-    $conn = new mysqli($host, $userName, $password, $dbName);
-
-    // Check connection
-    if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-    $fname = .$POST['last_name'];
-    $lname = .$POST['first_name'];
-    $email = .$POST['email'];
-    $message = .$POST['message'];
-    
-    $insertQuery = $mysqli_prepare("INSERT INTO emails(LastName, FirstName, Email, Message) VALUES (?, ?, ?, ?)");
-    $insertQuery->bind_param("ssss", $lname, $fname, $email, $message);
-    $insertQuery->execute();
-    $insertQuery->close();
-}?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<!-- hides the nav bar as user scrolls -->
+<!-- This script hides the nav bar as user scrolls -->
 <script>
 // Hide Header on on scroll down
 var didScroll;
@@ -69,6 +47,7 @@ function hasScrolled() {
     
     lastScrollTop = st;
 }
+    
 </script> 
 
 <html>
@@ -79,7 +58,9 @@ function hasScrolled() {
     <title>Alex Thayn</title>
     <meta name="description" content="Alex Thayn's Porfolio.">
     <link rel="stylesheet" href="CSS/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700" rel="stylesheet">
 </head>
+    
 <body id="contact">
     <header class="nav-down">
         <div class="navWrapper">
@@ -101,16 +82,17 @@ function hasScrolled() {
             </div>
         </div>
     </header>
+    
     <div id="contactform">
        
-        <form name="contactForm" method="post" action="">
-            <table width ="450px">
+        <form name="contactForm" method="post" action="send_email.php">
+            <table width ="650">
                 <tr>
                     <td valign="top">
                         <label for="first_name">First Name</label>
                     </td>
                     <td valign="top">
-                        <input  type="text" name="first_name" maxlength="50" style="width:300px">
+                        <input class="message" type="text" name="first_name" maxlength="50" style="width:350px" required>
                     </td>
                 </tr>
                 <tr>
@@ -118,7 +100,7 @@ function hasScrolled() {
                         <label for="last_name">Last Name</label>
                     </td>
                     <td valign="top">
-                        <input  type="text" name="last_name" maxlength="50" style="width:300px">
+                        <input  class="message" type="text" name="last_name" maxlength="50" style="width:350px" required>
                     </td>
                 </tr>
                 <tr>
@@ -126,7 +108,7 @@ function hasScrolled() {
                         <label for="email">Your Email</label>
                     </td>
                     <td>
-                        <input type="email" name="email" style="width:300px">
+                        <input class="message" type="email" name="email" style="width:350px" required>
                     </td>
                 </tr>
                 <tr>
@@ -134,22 +116,18 @@ function hasScrolled() {
                         <label for="message" >Message</label>
                     </td>
                     <td>
-                        <textarea id="message" name="message" placeholder="Write your message here..." spellcheck="true" style="height: 200px; width: 298px; resize:none"></textarea>
+                        <textarea class="message" name="message" placeholder="Write your message here..." spellcheck="true" style="height: 200px; width: 348px; resize:none" required></textarea>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                    </td>
-                    <td style="text-align: center" >
+                    <td colspan="2" style="text-align: center" >
                         <input id="formbutton" type="submit" value="Send Message">
                     </td>
                 </tr>
             </table>
         </form>
-    </div>
-    
-    <div id="stick"></div>
-    
+    </div>    
+     
 </body>
 
     

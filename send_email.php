@@ -1,22 +1,59 @@
-
-<?php
-    $host = "localhost";
-    $userName = "alexthay_alex;
-    $password = "password";
-    $dbName = "alexthayn_alexthay_1";
- 
-    // Create database connection
-    $conn = new mysqli($host, $userName, $password, $dbName);
-
-    // Check connection
-    if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-    $fname = .$POST['last_name'];
-    $lname = .$POST['first_name'];
-    $email = .$POST['email'];
-    $message = .$POST['message'];
+<html>
     
-    $insertQuery = $mysqli_prepare("INSERT INTO emails(LastName, FirstName, Email, Message) VALUES (?, ?, ?, ?)");
-    $insertQuery->bind_param("ssss", $lname, $fname, $email, $message);
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Alex Thayn</title>
+        <meta name="description" content="Alex Thayn's Porfolio.">
+        <link rel="stylesheet" href="CSS/styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700" rel="stylesheet">
+    </head>
+    <body id="formSubmitted">
+        <header class="nav-down">
+            <div class="navWrapper">
+                <div class="navbar1">
+                    <ul id="top-menu">
+                        <li class="active">
+                            <a href="index.html">HOME</a>
+                        </li>
+                        <li>
+                            <a href="about.html">ABOUT</a>
+                        </li>
+                        <li>
+                            <a href="project.html">PROJECTS</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
     
-}?>
+
+        <div id="formsent">
+            <?php
+                $fname = $_POST['last_name'];
+                $lname = $_POST['first_name'];
+                $email = $_POST['email'];
+                $message = $_POST['message'];
+                
+                
+                $mysqli = new mysqli("localhost", "alexthay_1", "password", "alexthay_1");
+                        
+                $insertStmt ="INSERT INTO emails (LastName, FirstName, Email, Message) VALUES ('" . $lname . "','" . $fname . "','" . $email . "','" . $message ."')";
+                
+       
+                if($mysqli->query($insertStmt)=== TRUE){
+                    echo "Thank You! Your message was sent.";
+                }else{
+                    echo "Error: " . $insertStmt . "<br>" . $mysqli->error;
+                }
+                
+                $mysqli->close();
+                
+            ?>
+        </div>
+    </body>
+</html>
+

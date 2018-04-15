@@ -23,10 +23,13 @@ header {
   	background: -o-linear-gradient(#EBF05B, #EFD858); 
   	background: -moz-linear-gradient(#EBF05B, #EFD858);
   	background: linear-gradient(#EBF05B, #EFD858);
-    font-family: monospace;
+    font-family: 'Open Sans Condensed', sans-serif;
 }
 
 /* Navbar Styling */
+.nav-down{
+    line-height: 30px;
+}
 .nav-up {
     top: -100px;
 }	
@@ -50,6 +53,7 @@ header {
 #top-menu li {
     float: left;
     list-style-type: none;
+    transition: none;
 }
 
 #top-menu a {
@@ -59,7 +63,8 @@ header {
     -webkit-transition: .5s all ease-out;
     -moz-transition: .5s all ease-out;
     transition: .5s all ease-out;
-    color: #ffffff;
+    color: #000000;
+    font-size: 30px;
     text-decoration: none;
 	padding:2px 3px 2px 5px;
 	-moz-border-radius: 3px; 
@@ -67,7 +72,7 @@ header {
 }
 
 #top-menu a:hover {
-	color: #0A4FA5; text-decoration:none; font-weight:500; background-color:#ffffff; padding:2px 3px 2px 5px; -moz-border-radius: 3px; border-radius: 3px;
+	color: #0A4FA5; text-decoration:none; font-weight:500; background-color:#ffffff; padding:10px 3px 2px 5px; -moz-border-radius: 3px; border-radius: 3px;
 }
 
 #top-menu li.active a {
@@ -79,59 +84,131 @@ header {
 #intro{
     margin-top: -100px;
     width: auto;
-    height: 4000px;
+    height: 2000px;
     background: url("../Images/graffiti.jpg") no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
+    text-align: center;
+}
+
+#myintro{
+    margin-top: 300px;
+    background-color: #2ECFF3;
+    box-shadow: 3px 3px 15px #444444;
+    display: inline-block;
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 5%;
+}
+
+#name{
+    font-size: 5em;
+    font-family: 'Nothing You Could Do', cursive;
+    color: #0A4FA5;
+}
+
+#se{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 100;
+    color: white;
+    font-size: 2em;
+}
+
+/*Project flexbox styling */
+.flex-container{
+    display: flex;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.flex-item{
+        box-shadow: 3px 3px 15px #444444;
+
+    padding: 5px;
+    width: 300px;
+    height: 300px;
+    margin-top: 100px;
+    flex-direction: row;
+    background: #EBF05B;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+a{
+    text-decoration: none;
+        font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+#skills-section{
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+/* Contact me page styling */
+#contact{
+    background: url("../Images/background.png") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 
-#name, #se{
-    top: 100px;
-    margin-left: 1em;
-    font-size: 10em;
-    font-family: monospace;
-    font-weight: 900;
-    color: #D83727;
-}
-
-
-/* Contact me page styling */
-#contact{
-    width: 100%;
-    background-color: #0A4FA5;
-}
-
 #contactform{
     padding: 10px;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 0px;
     width: 500px;
     margin: auto;
     margin-top: 150px;
-    font-family: monospace;
-    font-size: 1.5em;
-    z-index: 1;
-    
-    position: relative;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.2em;
+    box-shadow: 3px 3px 6px #555555;
 }
 
-#stick {
-    margin-top:-375px;
-    margin-left: auto;
-    margin-right: auto;
-	width: 20px;
-	height: 700px;
-	background: #a26a42;
-    z-index:99;
+.message{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 700;
 }
+
+
 
 #formbutton{
-    font-family: monospace;
-    background-color: white;
-    border:solid 2px;
-    border-radius: 5px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: #EFD858;
+    border: none;
     margin: auto;
-    margin-right: 75px;
+    margin-right: -45px;
+    font-weight: 700;
+    padding: 10px;
+    box-shadow: 2px 2px 2px #888888;
+}
+
+#formbutton a:hover{
+    background-color: #EFD858;
+}
+
+/* Styling for PHP page indicating the form was submitted */
+#formsent{
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin-top: 200px;
+    font-size: 2em;
+    text-align: center;
+    color: black;
+    font-weight: 700;
+}
+
+#formSubmitted{
+    background: url("../Images/background.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*Projects page */
+#projects{
+    margin-top: 200px;
 }
