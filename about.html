@@ -61,7 +61,8 @@ function hasScrolled() {
         <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700" rel="stylesheet">
     </head>
-    <body id="projectpage">
+    
+    <body id="aboutpage">
         <header class="nav-down">
             <div class="navWrapper">
                 <div class="navbar1">
@@ -69,48 +70,50 @@ function hasScrolled() {
                         <li>
                             <a href="index.html">HOME</a>
                         </li>
-                        <li>
-                            <a href="about.html">ABOUT</a>
-                        </li>
                         <li class="active">
-                            <a href="">PROJECTS</a>
+                            <a href="">ABOUT</a>
+                        </li>
+                        <li>
+                            <a href="project.html">PROJECTS</a>
                         </li>
                         <li>
                             <a href="contact.html">CONTACT</a>
                         </li>
-                         
+                        
                         <li id="linkedinlogo" style="float: right;"><a  id="linkedin" href="https://www.linkedin.com/in/alex-thayn"></a></li>
                     </ul>
                 </div>
             </div>
         </header>
-        <div id="projectbody">
-            <div id="projects" class="flex-container">
-                <a href="">
-                    <div class="flex-item">
-                        <h1>UX Design Project</h1>
-                            <img src="Images/uxwireframe.png"/>
-                        <img/>
+        <div >
+            <div class="flex-container">
+                <div class="flex-about" id="abouttop">
+                    <div class="flex-container" id="aboutmetext">
+                        <img id="portfolioimage" src="Images/portfolioImage.png"/>   
+                        <h1 id="hi" style="font-size: 3.5em;"><span id="hi">Hi!</span> My name is <em>Alex Thayn</em></h1>
                     </div>
-                </a>        
+                </div>
 
-                <a href="">
-                    <div class="flex-item">
-                        <h1>Pong Project</h1>
-                        <img src="Images/pong.PNG"/>
-                    </div>
-                </a>        
+                <div id="description" class="flex-about">
+                    <p class="text">
+                        I am an upcoming B.S. Software Engineering student working toward a software engineering degree with an emphasis in web development. I have a strong foundation in object-oriented programming and software design principles. I am experienced in developing, testing, and debugging code. I am a supportive and enthusiastic team player dedicated to excellence in each task.
+                    </p>
+                </div>
 
-                <a href="">
-                    <div class="flex-item">
-                        <h1>Tier 6 Android App</h1>
-                        <img src="Images/tier6.PNG"/>
-                    </div>
-                </a>       
-
+                <div id="randomfacts">
+                    <h3>Random Facts</h3>
+                    <p class="randomtext">
+                        I am addicted to rock climbing <br>
+                        I enjoy a good book <br>
+                        I love to learn new things <br>
+                        I am always in the mountains. <br>
+                    </p>
+                    <img id="climbingpic" src="../Images/climbing.jpg"/>
+                </div>
             </div>
         </div>
-        <footer>
+        
+         <footer>
             <a href="contact.html"  cursor:pointer;>
                 <button class="contactbtn">
                     Contact Me

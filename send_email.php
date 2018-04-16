@@ -13,7 +13,7 @@
             <div class="navWrapper">
                 <div class="navbar1">
                     <ul id="top-menu">
-                        <li class="active">
+                        <li>
                             <a href="index.html">HOME</a>
                         </li>
                         <li>
@@ -22,9 +22,11 @@
                         <li>
                             <a href="project.html">PROJECTS</a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="contact.html">CONTACT</a>
                         </li>
+                         
+                        <li id="linkedinlogo" style="float: right;"><a  id="linkedin" href="https://www.linkedin.com/in/alex-thayn"></a></li>
                     </ul>
                 </div>
             </div>
